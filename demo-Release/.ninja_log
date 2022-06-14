@@ -1,0 +1,15 @@
+# ninja log v5
+2	450	6769316110927050	demo_autogen/timestamp	e86d9698bd278a88
+2	450	6769316110927050	demo_autogen/mocs_compilation.cpp	e86d9698bd278a88
+2	450	6769316110927050	C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/timestamp	e86d9698bd278a88
+3615	3779	6769316145226644	demo.exe	12fdb400ded465c
+2	450	6769316110927050	C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/mocs_compilation.cpp	e86d9698bd278a88
+458	3575	6769316143325716	CMakeFiles/demo.dir/main.cpp.obj	2df06b61472abb6a
+451	3580	6769316143336028	CMakeFiles/demo.dir/demo_autogen/mocs_compilation.cpp.obj	8bff40dde9a54c40
+454	3614	6769316143748493	CMakeFiles/demo.dir/MyWidget.cpp.obj	47412fe2b01585ef
+5	167	6769317911578482	demo_autogen/timestamp	e86d9698bd278a88
+5	167	6769317911578482	demo_autogen/mocs_compilation.cpp	e86d9698bd278a88
+5	167	6769317911578482	C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/timestamp	e86d9698bd278a88
+5	167	6769317911578482	C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/mocs_compilation.cpp	e86d9698bd278a88
+172	2448	6769317934365198	CMakeFiles/demo.dir/yolo.cpp.obj	7fddf12f5cf615bc
+2449	2656	6769317936293533	demo.exe	6577729020dc5d79

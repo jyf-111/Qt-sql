@@ -17,12 +17,15 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql)
 set(OpenCV_DIR C:/Users/jyf/tool/opencv/build)
 set(OpenCV_INCLUDE_DIRS ${OpenCV_DIR}/include)
 set(OpenCV_LIBRARY_DIRS ${OpenCV_DIR}/x64/vc15/lib)
+include_directories(C:/Users/jyf/tool/darknet-master/include)
 include_directories(${OpenCV_INCLUDE_DIRS})
 set(PROJECT_SOURCES
         main.cpp
         MyWidget.cpp
         MyWidget.h
         mywidget.ui
+        yolo.h
+        yolo.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -52,6 +55,7 @@ target_link_libraries(demo PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Sql
     ${OpenCV_LIBRARY_DIRS}/opencv_world440.lib
+    C:/Users/jyf/tool/darknet-master/build/darknet/x64/yolo_cpp_dll.lib
 )
 
 set_target_properties(demo PROPERTIES
