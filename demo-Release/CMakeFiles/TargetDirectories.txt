@@ -1,5 +1,0 @@
-C:/Users/jyf/code/qt/demo/demo-Release/CMakeFiles/demo.dir
-C:/Users/jyf/code/qt/demo/demo-Release/CMakeFiles/edit_cache.dir
-C:/Users/jyf/code/qt/demo/demo-Release/CMakeFiles/rebuild_cache.dir
-C:/Users/jyf/code/qt/demo/demo-Release/CMakeFiles/demo_autogen_timestamp_deps.dir
-C:/Users/jyf/code/qt/demo/demo-Release/CMakeFiles/demo_autogen.dir
