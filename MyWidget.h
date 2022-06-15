@@ -1,31 +1,40 @@
-#ifndef MYWIDGET_H
+﻿#ifndef MYWIDGET_H
 #define MYWIDGET_H
 #include <QWidget>
 #include <QLineEdit>
 #include <QTextEdit>
 #include <QPushButton>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
 #include <QString>
-
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/core/core.hpp>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QFont>
+#include <QImage>
+#include <QPixmap>
+#include <QLabel>
+#include "sql.h"
+#include "opencv.h"
 
 class MyWidget : public QWidget
 {
     Q_OBJECT
-    QSqlDatabase database;
-    QLineEdit *le;
-    QTextEdit *te;
-    QPushButton* btn;
-    void connect_sqlite();
-private slots:
-    void do_query();
-public: 
+
+    sql* sql;
+    opencv* opencv;
+
+    QLineEdit *lineedit;
+    QTextEdit *textedit;
+    QPushButton *btn;
+    QLabel *label;
+    QSqlTableModel *model;
+    QTableView *view;
+    QVBoxLayout *Vlayout;
+    QHBoxLayout *Hlayout;
+
+    void set_basic_setting();
+    void set_layout();
+    void process();
+public:
     MyWidget(QWidget *parent = nullptr);
     ~MyWidget();
-    void opencv();
- };
+};
 #endif // MYWIDGET_H

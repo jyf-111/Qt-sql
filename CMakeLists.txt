@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+﻿cmake_minimum_required(VERSION 3.5)
 
 project(demo VERSION 0.1 LANGUAGES CXX)
 
@@ -24,6 +24,10 @@ set(PROJECT_SOURCES
         MyWidget.cpp
         MyWidget.h
         mywidget.ui
+        sql.h
+        sql.cpp
+        opencv.h
+        opencv.cpp
         yolo.h
         yolo.cpp
 )

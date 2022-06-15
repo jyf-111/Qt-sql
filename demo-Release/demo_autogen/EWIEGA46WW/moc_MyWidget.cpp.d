@@ -1,5 +1,11 @@
 C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp: C:/Users/jyf/code/qt/demo/MyWidget.h \
+  C:/Users/jyf/code/qt/demo/opencv.h \
+  C:/Users/jyf/code/qt/demo/sql.h \
+  C:/Users/jyf/code/qt/demo/yolo.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/QDebug \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/QString \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/QTimer \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qabstractitemmodel.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qalgorithms.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qanystringview.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qarraydata.h \
@@ -7,6 +13,7 @@ C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp:
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qarraydatapointer.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qatomic.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qbasicatomic.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qbasictimer.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qbindingstorage.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qbytearray.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qbytearrayalgorithms.h \
@@ -27,11 +34,14 @@ C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp:
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qglobalstatic.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qhash.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qhashfunctions.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qiodevice.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qiodevicebase.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qitemselectionmodel.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qiterable.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qiterator.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qline.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qlist.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qlocale.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qlogging.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qmap.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qmargins.h \
@@ -49,6 +59,7 @@ C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp:
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qprocessordetection.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qrect.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qrefcount.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qregularexpression.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qscopedpointer.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qscopeguard.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qset.h \
@@ -70,6 +81,7 @@ C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp:
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qtaggedpointer.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qtcore-config.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qtextstream.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qtimer.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qtmetamacros.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qtypeinfo.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qurl.h \
@@ -77,6 +89,9 @@ C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp:
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qvariant.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qvarlengtharray.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtCore/qversiontagging.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/QFont \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/QImage \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/QPixmap \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qbitmap.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qbrush.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qcolor.h \
@@ -90,6 +105,7 @@ C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp:
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qpaintdevice.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qpalette.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qpen.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qpicture.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qpixelformat.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qpixmap.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qpolygon.h \
@@ -103,35 +119,67 @@ C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp:
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qtgui-config.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qtguiglobal.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qtransform.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qvalidator.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qwindowdefs.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtGui/qwindowdefs_win.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/QSqlDatabase \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/QSqlError \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/QSqlQuery \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/QSqlTableModel \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/qsqldatabase.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/qsqlerror.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/qsqlquery.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/qsqlquerymodel.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/qsqltablemodel.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/qtsql-config.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtSql/qtsqlglobal.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/QHBoxLayout \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/QLabel \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/QLineEdit \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/QPushButton \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/QTableView \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/QTextEdit \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/QVBoxLayout \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/QWidget \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qabstractbutton.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qabstractitemdelegate.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qabstractitemview.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qabstractscrollarea.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qabstractslider.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qabstractspinbox.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qboxlayout.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qframe.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qgridlayout.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qlabel.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qlayout.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qlayoutitem.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qlineedit.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qpushbutton.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qrubberband.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qsizepolicy.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qslider.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qstyle.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qstyleoption.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qtabbar.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qtableview.h \
+  C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qtabwidget.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qtextedit.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qtwidgets-config.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64/include/QtWidgets/qwidget.h \
+  C:/Users/jyf/tool/darknet-master/include/yolo_v2_class.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/calib3d.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/core/affine.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/core/async.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/base.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/bufferpool.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/check.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/core.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/core/core_c.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/core/cuda.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/core/cuda.inl.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/core/cuda_types.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/cv_cpu_dispatch.h \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/cvdef.h \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/cvstd.hpp \
@@ -150,13 +198,78 @@ C:/Users/jyf/code/qt/demo/demo-Release/demo_autogen/EWIEGA46WW/moc_MyWidget.cpp:
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/saturate.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/traits.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/types.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/core/types_c.h \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/utility.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/version.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/core/vsx_utils.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/dnn.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/dnn/dict.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/dnn/dnn.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/dnn/dnn.inl.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/dnn/layer.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/dnn/utils/inference_engine.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/dnn/version.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/features2d.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/all_indices.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/allocator.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/any.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/autotuned_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/composite_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/config.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/defines.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/dist.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/dynamic_bitset.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/flann_base.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/general.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/ground_truth.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/heap.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/hierarchical_clustering_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/index_testing.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/kdtree_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/kdtree_single_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/kmeans_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/linear_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/logger.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/lsh_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/lsh_table.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/matrix.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/miniflann.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/nn_index.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/params.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/random.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/result_set.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/sampling.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/saving.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/flann/timer.h \
   C:/Users/jyf/tool/opencv/build/include/opencv2/highgui.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/highgui/highgui.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/highgui/highgui_c.h \
   C:/Users/jyf/tool/opencv/build/include/opencv2/imgcodecs.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/imgproc.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/imgproc/imgproc.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/imgproc/imgproc_c.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/imgproc/types_c.h \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/ml.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/ml/ml.inl.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/objdetect.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/objdetect/detection_based_tracker.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/opencv.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/opencv_modules.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/photo.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/blenders.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/camera.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/exposure_compensate.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/matchers.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/motion_estimators.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/seam_finders.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/util.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/util_inl.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/warpers.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/detail/warpers_inl.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/stitching/warpers.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/video.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/video/background_segm.hpp \
+  C:/Users/jyf/tool/opencv/build/include/opencv2/video/tracking.hpp \
   C:/Users/jyf/tool/opencv/build/include/opencv2/videoio.hpp

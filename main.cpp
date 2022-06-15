@@ -1,12 +1,12 @@
-#include <QApplication>
+﻿#include <QApplication>
 #include "MyWidget.h"
 
-using namespace cv;
+#include "sql.h"
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     MyWidget* w = new MyWidget;
     w->show();
-    w->opencv();
     return app.exec();
 }

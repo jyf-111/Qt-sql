@@ -304,6 +304,18 @@
 			null
 		],
 		[
+			"C:/Users/jyf/code/qt/demo/opencv.h",
+			"MU",
+			"EWIEGA46WW/moc_opencv.cpp",
+			null
+		],
+		[
+			"C:/Users/jyf/code/qt/demo/sql.h",
+			"MU",
+			"EWIEGA46WW/moc_sql.cpp",
+			null
+		],
+		[
 			"C:/Users/jyf/code/qt/demo/yolo.h",
 			"MU",
 			"EWIEGA46WW/moc_yolo.cpp",
@@ -366,6 +378,8 @@
 	[
 		[ "C:/Users/jyf/code/qt/demo/MyWidget.cpp", "MU", null ],
 		[ "C:/Users/jyf/code/qt/demo/main.cpp", "MU", null ],
+		[ "C:/Users/jyf/code/qt/demo/opencv.cpp", "MU", null ],
+		[ "C:/Users/jyf/code/qt/demo/sql.cpp", "MU", null ],
 		[ "C:/Users/jyf/code/qt/demo/yolo.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

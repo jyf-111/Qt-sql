@@ -76,6 +76,24 @@ build CMakeFiles\demo.dir\MyWidget.cpp.obj: CXX_COMPILER__demo_Release C$:\Users
   TARGET_COMPILE_PDB = CMakeFiles\demo.dir\
   TARGET_PDB = demo.pdb
 
+build CMakeFiles\demo.dir\sql.cpp.obj: CXX_COMPILER__demo_Release C$:\Users\jyf\code\qt\demo\sql.cpp || cmake_object_order_depends_target_demo
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -Zc:__cplusplus -permissive- -utf-8 -std:c++17
+  INCLUDES = -IC:\Users\jyf\code\qt\demo\demo-Release -IC:\Users\jyf\code\qt\demo -IC:\Users\jyf\code\qt\demo\demo-Release\demo_autogen\include -IC:\Users\jyf\tool\darknet-master\include -IC:\Users\jyf\tool\opencv\build\include -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include\QtCore -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\mkspecs\win32-msvc -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include\QtWidgets -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include\QtGui -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include\QtSql -external:W0
+  OBJECT_DIR = CMakeFiles\demo.dir
+  OBJECT_FILE_DIR = CMakeFiles\demo.dir
+  TARGET_COMPILE_PDB = CMakeFiles\demo.dir\
+  TARGET_PDB = demo.pdb
+
+build CMakeFiles\demo.dir\opencv.cpp.obj: CXX_COMPILER__demo_Release C$:\Users\jyf\code\qt\demo\opencv.cpp || cmake_object_order_depends_target_demo
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -Zc:__cplusplus -permissive- -utf-8 -std:c++17
+  INCLUDES = -IC:\Users\jyf\code\qt\demo\demo-Release -IC:\Users\jyf\code\qt\demo -IC:\Users\jyf\code\qt\demo\demo-Release\demo_autogen\include -IC:\Users\jyf\tool\darknet-master\include -IC:\Users\jyf\tool\opencv\build\include -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include\QtCore -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\mkspecs\win32-msvc -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include\QtWidgets -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include\QtGui -external:IC:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\include\QtSql -external:W0
+  OBJECT_DIR = CMakeFiles\demo.dir
+  OBJECT_FILE_DIR = CMakeFiles\demo.dir
+  TARGET_COMPILE_PDB = CMakeFiles\demo.dir\
+  TARGET_PDB = demo.pdb
+
 build CMakeFiles\demo.dir\yolo.cpp.obj: CXX_COMPILER__demo_Release C$:\Users\jyf\code\qt\demo\yolo.cpp || cmake_object_order_depends_target_demo
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_SQL_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG -Zc:__cplusplus -permissive- -utf-8 -std:c++17
@@ -93,7 +111,7 @@ build CMakeFiles\demo.dir\yolo.cpp.obj: CXX_COMPILER__demo_Release C$:\Users\jyf
 #############################################
 # Link the executable demo.exe
 
-build demo.exe: CXX_EXECUTABLE_LINKER__demo_Release CMakeFiles\demo.dir\demo_autogen\mocs_compilation.cpp.obj CMakeFiles\demo.dir\main.cpp.obj CMakeFiles\demo.dir\MyWidget.cpp.obj CMakeFiles\demo.dir\yolo.cpp.obj | C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Widgets.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Sql.lib C$:\Users\jyf\tool\opencv\build\x64\vc15\lib\opencv_world440.lib C$:\Users\jyf\tool\darknet-master\build\darknet\x64\yolo_cpp_dll.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Gui.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Core.lib || demo_autogen demo_autogen_timestamp_deps
+build demo.exe: CXX_EXECUTABLE_LINKER__demo_Release CMakeFiles\demo.dir\demo_autogen\mocs_compilation.cpp.obj CMakeFiles\demo.dir\main.cpp.obj CMakeFiles\demo.dir\MyWidget.cpp.obj CMakeFiles\demo.dir\sql.cpp.obj CMakeFiles\demo.dir\opencv.cpp.obj CMakeFiles\demo.dir\yolo.cpp.obj | C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Widgets.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Sql.lib C$:\Users\jyf\tool\opencv\build\x64\vc15\lib\opencv_world440.lib C$:\Users\jyf\tool\darknet-master\build\darknet\x64\yolo_cpp_dll.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Gui.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Core.lib || demo_autogen demo_autogen_timestamp_deps
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG
   LINK_FLAGS = /machine:x64 /INCREMENTAL:NO /subsystem:console
   LINK_LIBRARIES = C:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Widgets.lib  C:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Sql.lib  C:\Users\jyf\tool\opencv\build\x64\vc15\lib\opencv_world440.lib  C:\Users\jyf\tool\darknet-master\build\darknet\x64\yolo_cpp_dll.lib  C:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Gui.lib  d3d11.lib  dxgi.lib  dxguid.lib  C:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Core.lib  mpr.lib  userenv.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -155,7 +173,7 @@ build demo_autogen\timestamp demo_autogen\mocs_compilation.cpp | ${cmake_ninja_w
 #############################################
 # Phony custom command for CMakeFiles\demo_autogen_timestamp_deps
 
-build CMakeFiles\demo_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles\demo_autogen_timestamp_deps: phony C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\.\bin\uic.exe C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\.\bin\moc.exe C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Core.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Widgets.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Sql.lib
+build CMakeFiles\demo_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles\demo_autogen_timestamp_deps: phony C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\.\bin\uic.exe C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\.\bin\moc.exe C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Widgets.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Core.lib C$:\Users\jyf\tool\Qt\6.2.4\msvc2019_64\lib\Qt6Sql.lib
 
 
 #############################################
