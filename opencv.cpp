@@ -1,12 +1,12 @@
 ﻿#include "opencv.h"
 
 opencv::opencv():
-    cap("DCS.flv"),
+    cap(0),
     yolo(new class yolo),
     qtimer(new QTimer)
 {
-    qtimer->setInterval(30);
-    qtimer->start();
+    qtimer->setInterval(25);
+//    qtimer->start();
 }
 
 opencv::~opencv(){
@@ -20,10 +20,15 @@ QImage opencv::matToqimage(Mat& mat){
         return qimage;
 }
 
-void opencv::dispose(){
+bool opencv::dispose(){
+    if(!cap.isOpened()) return false;
     cap >> mat;
+    if(mat.empty()) return false;
     cv::resize(mat,mat,cv::Size(1920/2,1080/2));
-    result = yolo->detect(mat);
+    auto temp = yolo->detect(mat);
+    result = temp.first;
+    tips = temp.second;
+    return true;
 }
 
 QImage opencv::get_result(){
@@ -31,5 +36,19 @@ QImage opencv::get_result(){
         qDebug() << "error";
         exit(0);
     }else
-    return matToqimage(result);
+        return matToqimage(result);
+}
+
+std::vector<QString> opencv::get_tips(){
+    std::vector<QString> tmp;
+    for(auto &i:tips){
+        tmp.push_back(QString::fromStdString(i));
+    }
+    tips.clear();
+    std::vector<string>().swap(tips);
+    return tmp;
+}
+
+void opencv::set_video(QString& s){
+    cap.open(s.toStdString());
 }

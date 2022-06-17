@@ -17,14 +17,20 @@ class opencv : public QObject
     VideoCapture cap;
     Mat mat;
     Mat result;
+
     yolo* yolo;
+    std::vector<string> tips;
+    QDialog* dialog;
+
     QImage matToqimage(Mat&);
 public:
     QTimer* qtimer;
     opencv();
     ~opencv();
-    void dispose();
+    bool dispose();
     QImage get_result();
+    std::vector<QString> get_tips();
+    void set_video(QString& s);
 };
 
 #endif // OPENCV_H

@@ -30,6 +30,8 @@ set(PROJECT_SOURCES
         opencv.cpp
         yolo.h
         yolo.cpp
+        sqldialog.h
+        sqldialog.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -67,7 +69,7 @@ set_target_properties(demo PROPERTIES
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
-#    WIN32_EXECUTABLE TRUE
+    WIN32_EXECUTABLE TRUE
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)

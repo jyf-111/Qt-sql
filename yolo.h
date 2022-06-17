@@ -30,14 +30,15 @@ class yolo
 
     Detector detector;
     vector<string> classes;
+    vector<string> tips; //返回的标签集合
     //画出检测结果
-    void Drawer(cv::Mat& frame, vector<bbox_t> outs, vector<string> classes);
+    void Drawer(cv::Mat& frame, vector<bbox_t>& outs, vector<string>& classes);
     //画出检测框和相关信息
-    void DrawBoxes(cv::Mat& frame, vector<string> classes, int classId, float conf, int left, int top, int right, int bottom);
+    void DrawBoxes(cv::Mat& frame, vector<string>& classes, int classId, float conf, int left, int top, int right, int bottom);
 public:
     yolo();
     ~yolo();
-    cv::Mat detect(cv::Mat& );
+    std::pair<cv::Mat,std::vector<string>> detect(cv::Mat& );
 };
 
 #endif // YOLO_H

@@ -11,7 +11,7 @@ yolo::yolo() :
 
 yolo::~yolo(){}
 
-void yolo::DrawBoxes(Mat& frame, vector<string> classes, int classId, float conf, int left, int top, int right, int bottom){
+void yolo::DrawBoxes(Mat& frame, vector<string>& classes, int classId, float conf, int left, int top, int right, int bottom){
     //画检测框
     rectangle(frame, Point(left, top), Point(right, bottom), Scalar(255, 178, 50), 3);
     //该检测框对应的类别和置信度
@@ -20,6 +20,7 @@ void yolo::DrawBoxes(Mat& frame, vector<string> classes, int classId, float conf
     {
         CV_Assert(classId < (int)classes.size());
         label = classes[classId] + ":" + label;
+        tips.push_back(classes[classId]);
     }
     //将标签显示在检测框顶部
     int baseLine;
@@ -29,7 +30,7 @@ void yolo::DrawBoxes(Mat& frame, vector<string> classes, int classId, float conf
     putText(frame, label, Point(left, top), cv::FONT_HERSHEY_SIMPLEX, 0.75, Scalar(0, 0, 0), 1);
 }
 
-void yolo::Drawer(Mat& frame, vector<bbox_t> outs, vector<string> classes){
+void yolo::Drawer(Mat& frame, vector<bbox_t>& outs, vector<string>& classes){
     //获取所有最佳检测框信息
     for (int i = 0; i < outs.size(); i++)
     {
@@ -38,7 +39,7 @@ void yolo::Drawer(Mat& frame, vector<bbox_t> outs, vector<string> classes){
     }
 }
 
-Mat yolo::detect(Mat& frame){
+std::pair<Mat,std::vector<string>> yolo::detect(Mat& frame){
         //Mat图像转为yolo输入格式
         if (frame.empty()) {
             std::cout << "empty picture" << std::endl;
@@ -51,5 +52,8 @@ Mat yolo::detect(Mat& frame){
 
         //画图
         Drawer(frame, outs, classes);
-        return frame;
+        auto tmp = tips;
+        tips.clear();
+        std::vector<string>().swap(tips);
+        return std::make_pair(frame,tmp);
 }

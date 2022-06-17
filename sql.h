@@ -6,14 +6,22 @@
 #include <QSqlQuery>
 #include <QSqlTableModel>
 #include <QTableView>
-
+#include <QString>
+#include <QWidget>
+#include <vector>
 class sql
 {
+    void basic_setting();
 public:
     QSqlDatabase database;
-    sql();
+    QSqlTableModel* model[3];
+    sql(QWidget* parent);
     ~sql();
-    void do_query();
+    QSqlDatabase& getDatabase();
+    void insert_object(int num,QString s,QString com);
+    void insert_video(QString s,int size,int time);
+    void insert_computer(QString s);
+    auto do_sql(QString s)->std::vector<std::vector<QVariant>>;
 };
 
 #endif // SQL_H
