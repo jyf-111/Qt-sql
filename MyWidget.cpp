@@ -2,23 +2,20 @@
 
 MyWidget::MyWidget(QWidget *parent)
     : QWidget(parent),
+//submodel new
     sql(new class sql(this)),
     opencv(new class opencv),
-
+//widget new
     label(new QLabel),
     tabwidget(new QTabWidget),
     view{new QTableView,new QTableView,new QTableView},
-    sqlDialog(new class SqlDialog),
-
+    info_label(new QLabel("computer:")),
+//btn new
     fileOpenBtn(new QPushButton("open")),
-
     btn{new QPushButton("insert"),new QPushButton("delete"),new QPushButton("sql search")},
-
     startbtn(new QPushButton("start")),
     stopbtn(new QPushButton("stop")),
-
-    info_label(new QLabel("computer:")),
-
+//layout new
     Hlayout(new QHBoxLayout(this)),
     rightVlayout(new QVBoxLayout),
     leftVlayout(new QVBoxLayout),
@@ -64,6 +61,7 @@ MyWidget::MyWidget(QWidget *parent)
 
 void MyWidget::set_basic_setting(){
     showMaximized();
+    label->resize(1920/3,1080/3);
     label->setPixmap(QPixmap::fromImage(QImage("test.png").scaled(label->width(),label->width())));
 
     view[0]->setModel(sql->model[0]);
@@ -80,7 +78,7 @@ void MyWidget::set_layout(){
     rightVlayout->addWidget(info_label.get());
     rightVlayout->addWidget(tabwidget.get());
 
-    rightbtnlayout->addWidget(fileOpenBtn);
+    rightbtnlayout->addWidget(fileOpenBtn.get());
     rightbtnlayout->addWidget(btn[0]);
     rightbtnlayout->addWidget(btn[1]);
     rightbtnlayout->addWidget(btn[2]);
@@ -101,19 +99,18 @@ void MyWidget::set_layout(){
 MyWidget::~MyWidget()
 {
     delete[] view;
-    delete sqlDialog;
     delete[] btn;
 }
 
 void MyWidget::set_connect(){
-    connect(startbtn.get(),&QPushButton::clicked,[&](){
+    connect(startbtn.get(),&QPushButton::clicked,[this](){
         opencv->qtimer->start();
     });
-    connect(stopbtn.get(),&QPushButton::clicked,[&](){
+    connect(stopbtn.get(),&QPushButton::clicked,[this](){
         opencv->qtimer->stop();
     });
 
-    connect(opencv->qtimer,&QTimer::timeout,[this](){
+    connect(opencv->qtimer.get(),&QTimer::timeout,[this](){
         if(opencv->dispose()){
             label->setPixmap(QPixmap::fromImage(opencv->get_result()));
             auto tmp = opencv->get_tips();
@@ -138,9 +135,12 @@ void MyWidget::set_connect(){
             sql->model[num]->removeRow(row);
             sql->model[num]->select();
         }});
-    connect(btn[2],&QPushButton::clicked,sqlDialog,&SqlDialog::exec);
+    connect(btn[2],&QPushButton::clicked,[this](){
+        std::unique_ptr<SqlDialog> sqlDialog(new SqlDialog);
+        sqlDialog->exec();
+    });
 
-    connect(fileOpenBtn,&QPushButton::clicked,[=](){
+    connect(fileOpenBtn.get(),&QPushButton::clicked,[=](){
         QString path = QFileDialog::getOpenFileName(this,"video",".","video(*.avi *.mp4 *.flv)");
         qDebug() << path;
         sql->insert_video(path,0,0);

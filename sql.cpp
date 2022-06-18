@@ -19,7 +19,7 @@ sql::sql(QWidget* parent)
     }
     else
     {
-        qDebug() << "success";
+        qDebug() << "connect database success";
     }
 
     model[0] = new QSqlTableModel(parent,database);

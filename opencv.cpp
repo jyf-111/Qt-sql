@@ -1,7 +1,7 @@
 ﻿#include "opencv.h"
 
 opencv::opencv():
-    cap(0),
+    cap(),
     yolo(new class yolo),
     qtimer(new QTimer)
 {
@@ -24,8 +24,10 @@ bool opencv::dispose(){
     if(!cap.isOpened()) return false;
     cap >> mat;
     if(mat.empty()) return false;
+    qDebug() << "frame get and send to yolo";
     cv::resize(mat,mat,cv::Size(1920/2,1080/2));
     auto temp = yolo->detect(mat);
+    qDebug() << "yolo return result frame";
     result = temp.first;
     tips = temp.second;
     return true;

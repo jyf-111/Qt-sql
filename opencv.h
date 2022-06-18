@@ -18,13 +18,12 @@ class opencv : public QObject
     Mat mat;
     Mat result;
 
-    yolo* yolo;
-    std::vector<string> tips;
-    QDialog* dialog;
+    std::unique_ptr<yolo> yolo;
+    std::vector<string> tips;//返回widget的标签集合
 
     QImage matToqimage(Mat&);
 public:
-    QTimer* qtimer;
+    std::unique_ptr<QTimer> qtimer;
     opencv();
     ~opencv();
     bool dispose();

@@ -31,7 +31,6 @@ class MyWidget : public QWidget
     std::unique_ptr<QTabWidget> tabwidget;
 
     QTableView* view[3];
-    SqlDialog* sqlDialog;
     QPushButton* btn[3];
 
     std::unique_ptr<QHBoxLayout> Hlayout;
@@ -41,7 +40,7 @@ class MyWidget : public QWidget
     std::unique_ptr<QHBoxLayout> rightbtnlayout;
     std::unique_ptr<QHBoxLayout> leftbtnlayout;
 
-    QPushButton* fileOpenBtn;
+    std::unique_ptr<QPushButton> fileOpenBtn;
 
     std::unique_ptr<QLabel> info_label;
     std::unique_ptr<QPushButton> startbtn;
