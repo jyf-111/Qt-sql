@@ -18,8 +18,8 @@ public:
     sql(QWidget* parent);
     ~sql();
     QSqlDatabase& getDatabase();
-    void insert_object(int num,QString s,QString com);
-    void insert_video(QString s,int size,int time);
+    void insert_object(int num,QString s,QString cname);
+    void insert_video(QString s,int size,QString cname);
     void insert_computer(QString s);
     auto do_sql(QString s)->std::vector<std::vector<QVariant>>;
 };

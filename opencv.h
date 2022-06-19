@@ -1,9 +1,7 @@
 ﻿#ifndef OPENCV_H
 #define OPENCV_H
 
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/core/core.hpp>
+#include <opencv2/opencv.hpp>
 #include <QImage>
 #include <QTimer>
 #include "yolo.h"
@@ -29,7 +27,7 @@ public:
     bool dispose();
     QImage get_result();
     std::vector<QString> get_tips();
-    void set_video(QString& s);
+    void set_video(QString s);
 };
 
 #endif // OPENCV_H

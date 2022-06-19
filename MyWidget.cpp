@@ -11,8 +11,10 @@ MyWidget::MyWidget(QWidget *parent)
     view{new QTableView,new QTableView,new QTableView},
     info_label(new QLabel("computer:")),
 //btn new
-    fileOpenBtn(new QPushButton("open")),
-    btn{new QPushButton("insert"),new QPushButton("delete"),new QPushButton("sql search")},
+    vwritebtn(new QRadioButton("视频保存本地")),
+    cameraOpenBtn(new QPushButton("camera")),
+    fileOpenBtn(new QPushButton("open local viedo")),
+    btn{new QPushButton("insert"),new QPushButton("delete"),new QPushButton("sql")},
     startbtn(new QPushButton("start")),
     stopbtn(new QPushButton("stop")),
 //layout new
@@ -26,17 +28,23 @@ MyWidget::MyWidget(QWidget *parent)
 //登录dialog
     class dialog:public QDialog{
     public:
+        std::unique_ptr<QLabel> label;
         std::unique_ptr<QLineEdit> lineedit;
         std::unique_ptr<QPushButton> btn;
         std::unique_ptr<QVBoxLayout> vlayout;
         dialog(QWidget* parent=nullptr):
             QDialog(parent),
+            label(new QLabel),
             lineedit(new QLineEdit),
-            btn(new QPushButton("select")),
+            btn(new QPushButton("login")),
             vlayout(new QVBoxLayout(this))
         {
             resize(200,200);
-            lineedit->setFont(QFont("微软雅黑",20));
+            setWindowTitle("login in");
+            label->setFont(QFont("微软雅黑",20));
+            label->setText("登录");
+            lineedit->setFont(QFont("Timer",20));
+            vlayout->addWidget(label.get(),1,Qt::AlignCenter);
             vlayout->addWidget(lineedit.get());
             vlayout->addWidget(btn.get());
 
@@ -60,8 +68,7 @@ MyWidget::MyWidget(QWidget *parent)
 }
 
 void MyWidget::set_basic_setting(){
-    showMaximized();
-    label->resize(1920/3,1080/3);
+    setGeometry(100,100,1960/2,1080/2);
     label->setPixmap(QPixmap::fromImage(QImage("test.png").scaled(label->width(),label->width())));
 
     view[0]->setModel(sql->model[0]);
@@ -69,7 +76,7 @@ void MyWidget::set_basic_setting(){
     view[2]->setModel(sql->model[2]);
 
     tabwidget->addTab(view[0],"object");
-    tabwidget->addTab(view[1],"compter");
+    tabwidget->addTab(view[1],"computer");
     tabwidget->addTab(view[2],"video");
 }
 
@@ -78,7 +85,9 @@ void MyWidget::set_layout(){
     rightVlayout->addWidget(info_label.get());
     rightVlayout->addWidget(tabwidget.get());
 
+    rightbtnlayout->addWidget(vwritebtn.get());
     rightbtnlayout->addWidget(fileOpenBtn.get());
+    rightbtnlayout->addWidget(cameraOpenBtn.get());
     rightbtnlayout->addWidget(btn[0]);
     rightbtnlayout->addWidget(btn[1]);
     rightbtnlayout->addWidget(btn[2]);
@@ -106,6 +115,7 @@ void MyWidget::set_connect(){
     connect(startbtn.get(),&QPushButton::clicked,[this](){
         opencv->qtimer->start();
     });
+
     connect(stopbtn.get(),&QPushButton::clicked,[this](){
         opencv->qtimer->stop();
     });
@@ -123,10 +133,12 @@ void MyWidget::set_connect(){
             sql->database.commit();
         }
     });
+
     connect(btn[0],&QPushButton::clicked,[this](){
         auto mod = sql->model[tabwidget->currentIndex()];
         mod->insertRows(0,1);
     });
+
     connect(btn[1],&QPushButton::clicked,[this](){
         auto num = tabwidget->currentIndex();
         int row = view[num]->currentIndex().row();
@@ -136,14 +148,42 @@ void MyWidget::set_connect(){
             sql->model[num]->select();
         }});
     connect(btn[2],&QPushButton::clicked,[this](){
-        std::unique_ptr<SqlDialog> sqlDialog(new SqlDialog);
+        std::unique_ptr<SqlDialog> sqlDialog(new SqlDialog(this));
+        connect(sqlDialog->btn.get(),&QPushButton::clicked,[this](){
+            qDebug() << "in button";
+//            flush
+            for(int i=0;i<3;i++)
+                sql->model[i]->select();
+        });
         sqlDialog->exec();
     });
+
 
     connect(fileOpenBtn.get(),&QPushButton::clicked,[=](){
         QString path = QFileDialog::getOpenFileName(this,"video",".","video(*.avi *.mp4 *.flv)");
         qDebug() << path;
-        sql->insert_video(path,0,0);
+        sql->insert_video(path,0,info_label->text());
         opencv->set_video(path);
     });
+
+    connect(cameraOpenBtn.get(),&QPushButton::clicked,[this](){
+        class Dialog:public QDialog{
+        public:
+            std::unique_ptr<QLineEdit> lineedit{new QLineEdit(this)};
+            std::unique_ptr<QPushButton> btn{new QPushButton("ok",this)};
+            std::unique_ptr<QHBoxLayout> hLayout{new QHBoxLayout(this)};
+            Dialog(){
+                resize(400,50);
+                setWindowTitle("camera");
+                lineedit->setFont(QFont("Timer",16));
+                hLayout->addWidget(lineedit.get());
+                hLayout->addWidget(btn.get());
+            }
+        }dialog;
+        connect(dialog.btn.get(),&QPushButton::clicked,[&dialog,this](){
+            opencv->set_video(dialog.lineedit->text());
+            dialog.close();
+        });
+        dialog.exec();
+     });
 }

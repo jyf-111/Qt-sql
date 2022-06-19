@@ -25,11 +25,16 @@ bool opencv::dispose(){
     cap >> mat;
     if(mat.empty()) return false;
     qDebug() << "frame get and send to yolo";
-    cv::resize(mat,mat,cv::Size(1920/2,1080/2));
+    int width = mat.cols;
+    int height = mat.rows;
+    qDebug() << "width" << width;
+    qDebug() << "height" << height;
+    cv::resize(mat,mat,cv::Size(width>1920/2?1920/2:width,height>1080/2?1080/2:width));
+    qDebug() << "resize down start detect";
     auto temp = yolo->detect(mat);
-    qDebug() << "yolo return result frame";
     result = temp.first;
     tips = temp.second;
+    qDebug() << "yolo return result frame";
     return true;
 }
 
@@ -51,6 +56,14 @@ std::vector<QString> opencv::get_tips(){
     return tmp;
 }
 
-void opencv::set_video(QString& s){
-    cap.open(s.toStdString());
+void opencv::set_video(QString s){
+    try{
+        if(s=="0")
+            cap.open(0);
+        else
+            cap.open(s.toStdString());
+    }catch(cv::Exception &e){
+        qDebug() << e.what();
+    }
+
 }

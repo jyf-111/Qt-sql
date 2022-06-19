@@ -1,6 +1,7 @@
 ﻿#include "sqldialog.h"
 
-SqlDialog::SqlDialog():
+SqlDialog::SqlDialog(QWidget* parent):
+    QDialog(parent),
     sql(new class sql(this)),
     textedit(new QTextEdit),
     lineedit(new QLineEdit),
@@ -13,21 +14,23 @@ SqlDialog::SqlDialog():
 }
 
 void SqlDialog::basic_setting(){
+    setWindowTitle("sql exec");
     textedit->setReadOnly(true);
     lineedit->setFont(QFont("微软雅黑",20));
 }
 
 void SqlDialog::set_layout(){
-    vlayout->addWidget(textedit);
-    vlayout->addWidget(lineedit);
-    vlayout->addWidget(btn);
+    vlayout->addWidget(textedit.get());
+    vlayout->addWidget(lineedit.get());
+    vlayout->addWidget(btn.get());
 }
 
 void SqlDialog::set_connect(){
-    connect(btn,&QPushButton::clicked,[this](){
+    connect(btn.get(),&QPushButton::clicked,[this](){
         textedit->clear();
         QString s = lineedit->text();
         auto vec = sql->do_sql(s);
+        textedit->append(QString("> ").append(s));
         for(auto &i:vec){
             QString tmp;
             for(auto j:i){
@@ -37,8 +40,7 @@ void SqlDialog::set_connect(){
             textedit->append(tmp);
         }
         QString tmp;
-        tmp.append("----------------");
-        tmp.append(__TIME__);
+        tmp.append("---------------------------");
         textedit->append(tmp);
         lineedit->clear();
     });

@@ -35,22 +35,23 @@ sql::~sql(){
 void sql::basic_setting(){
     model[0]->setTable("object");
     model[0]->setEditStrategy(QSqlTableModel::OnFieldChange);
-    model[0]->setHeaderData(0,Qt::Horizontal,"index");
-    model[0]->setHeaderData(1,Qt::Horizontal,"name");
+    model[0]->setHeaderData(0,Qt::Horizontal,"idx");
+    model[0]->setHeaderData(1,Qt::Horizontal,"oname");
+    model[0]->setHeaderData(2,Qt::Horizontal,"cname");
     model[0]->select();
 
     model[1]->setTable("computer");
     model[1]->setEditStrategy(QSqlTableModel::OnFieldChange);
-    model[1]->setHeaderData(0,Qt::Horizontal,"name");
+    model[1]->setHeaderData(0,Qt::Horizontal,"cname");
     model[1]->setHeaderData(1,Qt::Horizontal,"CPU");
     model[1]->setHeaderData(2,Qt::Horizontal,"GPU");
     model[1]->select();
 
     model[2]->setTable("video");
     model[2]->setEditStrategy(QSqlTableModel::OnFieldChange);
-    model[2]->setHeaderData(0,Qt::Horizontal,"name");
+    model[2]->setHeaderData(0,Qt::Horizontal,"vname");
     model[2]->setHeaderData(1,Qt::Horizontal,"size");
-    model[2]->setHeaderData(2,Qt::Horizontal,"time");
+    model[2]->setHeaderData(2,Qt::Horizontal,"cname");
     model[2]->select();
 }
 
@@ -76,11 +77,11 @@ auto sql::do_sql(QString s)->std::vector<std::vector<QVariant>>
 }
 
 
-void sql::insert_object(int num,QString s,QString com){
+void sql::insert_object(int num,QString s,QString cname){
     model[0]->insertRows(0,1);
     model[0]->setData(model[0]->index(0,0),num);
     model[0]->setData(model[0]->index(0,1),s);
-    model[0]->setData(model[0]->index(0,2),com);
+    model[0]->setData(model[0]->index(0,2),cname);
     model[0]->submitAll();
     model[0]->select();
 }
@@ -94,11 +95,11 @@ void sql::insert_computer(QString s){
     model[1]->select();
 }
 
-void sql::insert_video(QString s,int size,int time){
+void sql::insert_video(QString s,int size,QString cname){
     model[2]->insertRows(0,1);
     model[2]->setData(model[2]->index(0,0),s);
     model[2]->setData(model[2]->index(0,1),size);
-    model[2]->setData(model[2]->index(0,2),time);
+    model[2]->setData(model[2]->index(0,2),cname);
     model[2]->submitAll();
     model[2]->select();
 }
