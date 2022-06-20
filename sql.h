@@ -4,6 +4,7 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QSqlRecord>
 #include <QSqlTableModel>
 #include <QTableView>
 #include <QString>
@@ -19,8 +20,8 @@ public:
     ~sql();
     QSqlDatabase& getDatabase();
     void insert_object(int num,QString s,QString cname);
-    void insert_video(QString s,int size,QString cname);
     void insert_computer(QString s);
+    void insert_video(QString s,int width,int height,QString cname);
     auto do_sql(QString s)->std::vector<std::vector<QVariant>>;
 };
 

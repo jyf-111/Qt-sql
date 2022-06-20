@@ -50,8 +50,9 @@ void sql::basic_setting(){
     model[2]->setTable("video");
     model[2]->setEditStrategy(QSqlTableModel::OnFieldChange);
     model[2]->setHeaderData(0,Qt::Horizontal,"vname");
-    model[2]->setHeaderData(1,Qt::Horizontal,"size");
-    model[2]->setHeaderData(2,Qt::Horizontal,"cname");
+    model[2]->setHeaderData(1,Qt::Horizontal,"width");
+    model[2]->setHeaderData(2,Qt::Horizontal,"height");
+    model[2]->setHeaderData(3,Qt::Horizontal,"cname");
     model[2]->select();
 }
 
@@ -78,29 +79,32 @@ auto sql::do_sql(QString s)->std::vector<std::vector<QVariant>>
 
 
 void sql::insert_object(int num,QString s,QString cname){
-    model[0]->insertRows(0,1);
-    model[0]->setData(model[0]->index(0,0),num);
-    model[0]->setData(model[0]->index(0,1),s);
-    model[0]->setData(model[0]->index(0,2),cname);
+    QSqlRecord record = model[0]->record();
+    record.setValue(0,num);
+    record.setValue(1,s);
+    record.setValue(2,cname);
+    model[0]->insertRecord(0,record);
     model[0]->submitAll();
     model[0]->select();
 }
 
 void sql::insert_computer(QString s){
-    model[1]->insertRows(0,1);
-    model[1]->setData(model[1]->index(0,0),s);
-    model[1]->setData(model[1]->index(0,1),"");
-    model[1]->setData(model[1]->index(0,2),"");
+    QSqlRecord record = model[1]->record();
+    record.setValue(0,s);
+    record.setNull(1);
+    record.setNull(2);
+    model[1]->insertRecord(0,record);
     model[1]->submitAll();
     model[1]->select();
 }
 
-void sql::insert_video(QString s,int size,QString cname){
-    model[2]->insertRows(0,1);
-    model[2]->setData(model[2]->index(0,0),s);
-    model[2]->setData(model[2]->index(0,1),size);
-    model[2]->setData(model[2]->index(0,2),cname);
+void sql::insert_video(QString s,int width,int height,QString cname){
+    QSqlRecord record = model[2]->record();
+    record.setValue(0,s);
+    record.setValue(1,width);
+    record.setValue(2,height);
+    record.setValue(3,cname);
+    model[2]->insertRecord(0,record);
     model[2]->submitAll();
     model[2]->select();
 }
-

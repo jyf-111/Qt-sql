@@ -65,5 +65,7 @@ void opencv::set_video(QString s){
     }catch(cv::Exception &e){
         qDebug() << e.what();
     }
-
+    videoInfo.width = cap.get(cv::CAP_PROP_FRAME_WIDTH);
+    videoInfo.height = cap.get(cv::CAP_PROP_FRAME_HEIGHT);
+    videoInfo.frame = cap.get(cv::CAP_PROP_FRAME_COUNT);
 }

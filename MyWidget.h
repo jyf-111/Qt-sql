@@ -41,7 +41,7 @@ class MyWidget : public QWidget
     std::unique_ptr<QHBoxLayout> leftbtnlayout;
 
     QPushButton* btn[3];
-    std::unique_ptr<QRadioButton> vwritebtn;
+//    std::unique_ptr<QRadioButton> vwritebtn;
     std::unique_ptr<QPushButton> cameraOpenBtn;
     std::unique_ptr<QPushButton> fileOpenBtn;
     std::unique_ptr<QPushButton> startbtn;

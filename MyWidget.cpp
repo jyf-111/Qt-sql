@@ -11,7 +11,7 @@ MyWidget::MyWidget(QWidget *parent)
     view{new QTableView,new QTableView,new QTableView},
     info_label(new QLabel("computer:")),
 //btn new
-    vwritebtn(new QRadioButton("视频保存本地")),
+//    vwritebtn(new QRadioButton("视频保存本地")),
     cameraOpenBtn(new QPushButton("camera")),
     fileOpenBtn(new QPushButton("open local viedo")),
     btn{new QPushButton("insert"),new QPushButton("delete"),new QPushButton("sql")},
@@ -52,10 +52,24 @@ MyWidget::MyWidget(QWidget *parent)
     }dia(this);
     dia.setWindowTitle("computer");
     connect(dia.btn.get(),&QPushButton::clicked,[&](){
+        int count = sql->model[1]->rowCount();
+        QSqlRecord record;
+        bool login = false;
+        for(int i=0;i<count;i++){
+            record = sql->model[1]->record(i);
+            if(record.value(0).toString()==dia.lineedit->text()){
+                login = true;
+                break;
+            }
+        }
+        if(!login){
+            QMessageBox::warning(this,"login","login deny");
+            exit(0);
+        }
+
         auto text = dia.lineedit->text();
         info_label->setText(text);
         dia.lineedit->clear();
-        sql->insert_computer(text);
         dia.close();
     });
     dia.exec();
@@ -85,7 +99,7 @@ void MyWidget::set_layout(){
     rightVlayout->addWidget(info_label.get());
     rightVlayout->addWidget(tabwidget.get());
 
-    rightbtnlayout->addWidget(vwritebtn.get());
+    //    rightbtnlayout->addWidget(vwritebtn.get());
     rightbtnlayout->addWidget(fileOpenBtn.get());
     rightbtnlayout->addWidget(cameraOpenBtn.get());
     rightbtnlayout->addWidget(btn[0]);
@@ -151,7 +165,7 @@ void MyWidget::set_connect(){
         std::unique_ptr<SqlDialog> sqlDialog(new SqlDialog(this));
         connect(sqlDialog->btn.get(),&QPushButton::clicked,[this](){
             qDebug() << "in button";
-//            flush
+            //            flush
             for(int i=0;i<3;i++)
                 sql->model[i]->select();
         });
@@ -162,8 +176,8 @@ void MyWidget::set_connect(){
     connect(fileOpenBtn.get(),&QPushButton::clicked,[=](){
         QString path = QFileDialog::getOpenFileName(this,"video",".","video(*.avi *.mp4 *.flv)");
         qDebug() << path;
-        sql->insert_video(path,0,info_label->text());
         opencv->set_video(path);
+        sql->insert_video(path,opencv->videoInfo.width,opencv->videoInfo.height,info_label->text());
     });
 
     connect(cameraOpenBtn.get(),&QPushButton::clicked,[this](){
@@ -185,5 +199,5 @@ void MyWidget::set_connect(){
             dialog.close();
         });
         dialog.exec();
-     });
+    });
 }

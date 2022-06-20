@@ -21,6 +21,9 @@ class opencv : public QObject
 
     QImage matToqimage(Mat&);
 public:
+    struct{
+        int width,height,frame;
+    }videoInfo;
     std::unique_ptr<QTimer> qtimer;
     opencv();
     ~opencv();
