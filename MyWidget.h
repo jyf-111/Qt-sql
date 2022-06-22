@@ -40,8 +40,8 @@ class MyWidget : public QWidget
     std::unique_ptr<QHBoxLayout> rightbtnlayout;
     std::unique_ptr<QHBoxLayout> leftbtnlayout;
 
-    QPushButton* btn[3];
-//    std::unique_ptr<QRadioButton> vwritebtn;
+    QPushButton *btn[3];
+    std::unique_ptr<QRadioButton> vwritebtn;
     std::unique_ptr<QPushButton> cameraOpenBtn;
     std::unique_ptr<QPushButton> fileOpenBtn;
     std::unique_ptr<QPushButton> startbtn;
@@ -51,6 +51,7 @@ class MyWidget : public QWidget
     void set_layout();
     void set_connect();
     void process();
+
 public:
     std::shared_ptr<sql> sql;
     MyWidget(QWidget *parent = nullptr);

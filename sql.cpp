@@ -11,7 +11,7 @@ sql::sql()
         // 建立和SQlite数据库的连接
         database = QSqlDatabase::addDatabase("QSQLITE");
         // 设置数据库文件的名字
-        database.setDatabaseName("test.db");
+        database.setDatabaseName("data.db");
     }
     if (!database.open())
     {
@@ -26,6 +26,7 @@ sql::sql()
     model[1] = new QSqlTableModel(nullptr,database);
     model[2] = new QSqlTableModel(nullptr,database);
     basic_setting();
+    do_sql("delete from object");
 }
 
 sql::~sql(){

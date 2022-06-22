@@ -4,15 +4,19 @@
 #include <opencv2/opencv.hpp>
 #include <QImage>
 #include <QTimer>
+#include <chrono>
 #include "yolo.h"
 
 using cv::Mat;
 using cv::VideoCapture;
+using cv::VideoWriter;
 
 class opencv : public QObject
 {
     Q_OBJECT
     VideoCapture cap;
+    VideoWriter writer;
+
     Mat mat;
     Mat result;
 
@@ -21,16 +25,18 @@ class opencv : public QObject
 
     QImage matToqimage(Mat&);
 public:
+    bool do_writer;
     struct{
-        int width,height,frame;
+        int width,height,fps;
     }videoInfo;
+
     std::unique_ptr<QTimer> qtimer;
     opencv();
     ~opencv();
+    void set_video(QString s);
     bool dispose();
     QImage get_result();
     std::vector<QString> get_tips();
-    void set_video(QString s);
 };
 
 #endif // OPENCV_H
