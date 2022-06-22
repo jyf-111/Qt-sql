@@ -2,3 +2,5 @@
 /demo-Release
 /build
 /demo-MinSizeRel
+/bin
+/.vscode

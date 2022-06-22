@@ -13,6 +13,7 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QRadioButton>
+#include <QCloseEvent>
 #include <QFont>
 
 #include "sql.h"
@@ -33,7 +34,7 @@ class MyWidget : public QWidget
     std::unique_ptr<QTabWidget> tabwidget;
 
     QTableView* view[3];
-
+    
     std::unique_ptr<QHBoxLayout> Hlayout;
     std::unique_ptr<QVBoxLayout> rightVlayout;
     std::unique_ptr<QVBoxLayout> leftVlayout;

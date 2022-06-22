@@ -40,14 +40,13 @@ MyWidget::MyWidget(QWidget *parent)
             vlayout(new QVBoxLayout(this))
         {
             resize(200,200);
-            setWindowTitle("login in");
+            setWindowFlag(Qt::FramelessWindowHint);
             label->setFont(QFont("微软雅黑",20));
             label->setText("登录");
             lineedit->setFont(QFont("Timer",20));
             vlayout->addWidget(label.get(),1,Qt::AlignCenter);
             vlayout->addWidget(lineedit.get());
             vlayout->addWidget(btn.get());
-
         }
     }dia(this);
     dia.setWindowTitle("computer");
@@ -84,6 +83,7 @@ MyWidget::MyWidget(QWidget *parent)
 void MyWidget::set_basic_setting(){
     setGeometry(100,100,1960/2,1080/2);
     label->setPixmap(QPixmap::fromImage(QImage("test.png").scaled(label->width(),label->width())));
+    // label->setText("监控管理系统");
 
     view[0]->setModel(sql->model[0]);
     view[1]->setModel(sql->model[1]);
@@ -121,8 +121,8 @@ void MyWidget::set_layout(){
 
 MyWidget::~MyWidget()
 {
-    delete[] view;
-    delete[] btn;
+    delete []&view;
+    delete []&btn;
 }
 
 void MyWidget::set_connect(){

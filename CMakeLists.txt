@@ -11,6 +11,10 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+
+set(CMAKE_PREFIX_PATH C:/Users/jyf/tool/Qt/6.2.4/msvc2019_64)
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Sql)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql)
 
@@ -19,11 +23,11 @@ set(OpenCV_INCLUDE_DIRS ${OpenCV_DIR}/include)
 set(OpenCV_LIBRARY_DIRS ${OpenCV_DIR}/x64/vc15/lib)
 include_directories(C:/Users/jyf/tool/darknet-master/include)
 include_directories(${OpenCV_INCLUDE_DIRS})
+
 set(PROJECT_SOURCES
         main.cpp
         MyWidget.cpp
         MyWidget.h
-        mywidget.ui
         sql.h
         sql.cpp
         opencv.h
@@ -69,7 +73,7 @@ set_target_properties(demo PROPERTIES
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
+    # WIN32_EXECUTABLE TRUE
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
