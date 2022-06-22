@@ -26,7 +26,6 @@ class MyWidget : public QWidget
 {
     Q_OBJECT
 
-    std::unique_ptr<sql> sql;
     std::unique_ptr<opencv> opencv;
 
     std::unique_ptr<QLabel> label;//image
@@ -53,6 +52,7 @@ class MyWidget : public QWidget
     void set_connect();
     void process();
 public:
+    std::shared_ptr<sql> sql;
     MyWidget(QWidget *parent = nullptr);
     ~MyWidget();
 };

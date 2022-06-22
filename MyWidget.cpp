@@ -3,7 +3,7 @@
 MyWidget::MyWidget(QWidget *parent)
     : QWidget(parent),
 //submodel new
-    sql(new class sql(this)),
+    sql(new class sql),
     opencv(new class opencv),
 //widget new
     label(new QLabel),
@@ -82,8 +82,9 @@ MyWidget::MyWidget(QWidget *parent)
 
 void MyWidget::set_basic_setting(){
     setGeometry(100,100,1960/2,1080/2);
-    label->setPixmap(QPixmap::fromImage(QImage("test.png").scaled(label->width(),label->width())));
-    // label->setText("监控管理系统");
+    label->setAlignment(Qt::AlignCenter);
+    label->setFont(QFont("Timer",30));
+    label->setText("监控管理系统");
 
     view[0]->setModel(sql->model[0]);
     view[1]->setModel(sql->model[1]);
@@ -117,6 +118,7 @@ void MyWidget::set_layout(){
 
     Hlayout->addLayout(leftVlayout.get());
     Hlayout->addLayout(rightVlayout.get());
+    Hlayout->setStretchFactor(leftVlayout.get(),5);
 }
 
 MyWidget::~MyWidget()
@@ -161,6 +163,7 @@ void MyWidget::set_connect(){
             sql->model[num]->removeRow(row);
             sql->model[num]->select();
         }});
+
     connect(btn[2],&QPushButton::clicked,[this](){
         std::unique_ptr<SqlDialog> sqlDialog(new SqlDialog(this));
         connect(sqlDialog->btn.get(),&QPushButton::clicked,[this](){
@@ -171,7 +174,6 @@ void MyWidget::set_connect(){
         });
         sqlDialog->exec();
     });
-
 
     connect(fileOpenBtn.get(),&QPushButton::clicked,[=](){
         QString path = QFileDialog::getOpenFileName(this,"video",".","video(*.avi *.mp4 *.flv)");

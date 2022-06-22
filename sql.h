@@ -16,9 +16,8 @@ class sql
 public:
     QSqlDatabase database;
     QSqlTableModel* model[3];
-    sql(QWidget* parent);
+    sql();
     ~sql();
-    QSqlDatabase& getDatabase();
     void insert_object(int num,QString s,QString cname);
     void insert_computer(QString s);
     void insert_video(QString s,int width,int height,QString cname);

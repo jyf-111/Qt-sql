@@ -1,6 +1,6 @@
 ﻿#include "sql.h"
 
-sql::sql(QWidget* parent)
+sql::sql()
 {
     if (QSqlDatabase::contains("qt_sql_default_connection"))
     {
@@ -22,9 +22,9 @@ sql::sql(QWidget* parent)
         qDebug() << "connect database success";
     }
 
-    model[0] = new QSqlTableModel(parent,database);
-    model[1] = new QSqlTableModel(parent,database);
-    model[2] = new QSqlTableModel(parent,database);
+    model[0] = new QSqlTableModel(nullptr,database);
+    model[1] = new QSqlTableModel(nullptr,database);
+    model[2] = new QSqlTableModel(nullptr,database);
     basic_setting();
 }
 
@@ -69,8 +69,11 @@ auto sql::do_sql(QString s)->std::vector<std::vector<QVariant>>
         while (query.next())
         {
             tmp.clear();
-            tmp.push_back(query.value(0));
-            tmp.push_back(query.value(1));
+            int i = 0;
+            QVariant val;
+
+            while((val=query.value(i++)).isValid()) 
+                tmp.push_back(val.toString());
             result.push_back(tmp);
         }
     }

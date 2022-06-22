@@ -2,7 +2,7 @@
 
 SqlDialog::SqlDialog(QWidget* parent):
     QDialog(parent),
-    sql(new class sql(this)),
+    sql(static_cast<MyWidget*>(parent)->sql),
     textedit(new QTextEdit),
     lineedit(new QLineEdit),
     btn(new QPushButton("exec")),
