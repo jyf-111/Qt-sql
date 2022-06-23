@@ -80,7 +80,7 @@ MyWidget::MyWidget(QWidget *parent)
 
 void MyWidget::set_basic_setting()
 {
-    setGeometry(100, 100, 1960 / 2, 1080 / 2);
+    setGeometry(25, 100, 1960 / 2, 1080 / 2);
     label->setAlignment(Qt::AlignCenter);
     label->setFont(QFont("Timer", 30));
     label->setText("监控管理系统");
@@ -88,10 +88,14 @@ void MyWidget::set_basic_setting()
     view[0]->setModel(sql->model[0]);
     view[1]->setModel(sql->model[1]);
     view[2]->setModel(sql->model[2]);
+    for(int i=0;i<3;i++){
+        view[i]->setModel(sql->model[i]);
+    }
 
     tabwidget->addTab(view[0], "object");
     tabwidget->addTab(view[1], "computer");
     tabwidget->addTab(view[2], "video");
+    tabwidget->setStyleSheet("QTabBar::tab{width:125px}");
 }
 
 void MyWidget::set_layout()
@@ -113,12 +117,13 @@ void MyWidget::set_layout()
 
     leftVlayout->addWidget(label.get());
     leftVlayout->addLayout(leftbtnlayout.get());
-    leftVlayout->setStretch(0, 4);
+    leftVlayout->setStretch(0, 5);
     leftVlayout->setStretch(1, 1);
 
     Hlayout->addLayout(leftVlayout.get());
     Hlayout->addLayout(rightVlayout.get());
     Hlayout->setStretchFactor(leftVlayout.get(), 5);
+    Hlayout->setStretchFactor(rightVlayout.get(), 1);
 }
 
 MyWidget::~MyWidget()
@@ -179,7 +184,6 @@ void MyWidget::set_connect()
             {
         QString path = QFileDialog::getOpenFileName(this, "video", "./Videos", "video(*.avi *.mp4 *.flv)");
         if (!path.isEmpty()){
-            qDebug() << path;
             opencv->set_video(path);
             sql->insert_video(path, opencv->videoInfo.width, opencv->videoInfo.height, info_label->text());
         } });
